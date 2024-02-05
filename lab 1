@@ -122,7 +122,7 @@ print(c[2:])
 d = "Hello, World"
 print(d[-5:-2])
 
-a = "Marina"
+a = "Bekzhan"
 print(a.upper())
 
 b = "KBTUSTUDENT"
@@ -144,7 +144,7 @@ print(a + " " + b)
 
 # format strings
 age = 18
-txt = "My name is Marina and I am {}"
+txt = "My name is Bekzhan and I am {}"
 print(txt.format(age))
 
 food1 = "apple"
