@@ -334,6 +334,138 @@ x = {
     {"model": "Ford Edge", "mpg": 24.1}
   ]
 }
-
+Python JSON parsing
 print(json.dumps(x))
+Python JSON parsing
+
+import json 
+with open("sample-data.json", "r") as read_file: 
+    data = json.load(read_file) 
+    print("Interface Status") 
+    print("================================================================================") 
+    print("DN                                                       Description           Speed        MTU  ") 
+    print("--------------------------------------------------   --------------------      ------      ------") 
+    for s in range(18): 
+        for x, y in data["imdata"][s]['l1PhysIf']["attributes"].items(): 
+            if x == 'dn': 
+                print(y, end="                                    ") 
+            if x == "mtu": 
+                print(y, end="") 
+            if x == "fecMode": 
+                print(y, end="       ") 
+        print("\n")
+
+from datetime import datetime, timedelta 
+
+date.md
+# substract 5 days 
  
+print("Current time:", datetime.now()) 
+print("Five days before:", datetime.now() - timedelta(days = 5)) 
+ 
+# yesterday, today, tomorrow 
+yest = datetime.now() - timedelta(1) 
+today = datetime.now() 
+tom = datetime.now() + timedelta(1) 
+print("Yesterday:", yest.strftime('%d-%m-%Y')) 
+print("Today:", today.strftime('%d-%m-%Y')) 
+print("Tomorrow:", tom.strftime('%d-%m-%Y')) 
+ 
+# microseconds 
+x = datetime.now() 
+print("Microseconds:", x.replace(microsecond=0)) 
+ 
+# date difference 
+y1, m1, d1 = int(input()), int(input()), int(input()) 
+y2, m2, d2 = int(input()), int(input()), int(input()) 
+a = datetime(y1, m1, d1) 
+b = datetime(y2, m2, d2) 
+d = b - a 
+print((b-a).total_seconds())
+Generators.md
+
+1) # Create a generator that generates the squares of numbers up to some number N. 
+class gensquare(): 
+    def iter(self): 
+        self.a = 1 
+        return self 
+    def next(self): 
+        if self.a * self.a <= n: 
+            x = self.a 
+            self.a += 1 
+            return x**2 
+        else: 
+            raise StopIteration 
+ 
+n = int(input()) 
+z = gensquare() 
+i = iter(z) 
+for c in i: 
+    print(c)
+
+2) # Write a program using generator to print 
+# the even numbers between 0 and n in comma 
+# separated form where n is input from console. 
+def even(): 
+    for i in range(0, n+1, 2): 
+        yield i 
+n = int(input()) 
+res = [] 
+for x in even(): 
+    res.append(str(x)) 
+print(",". join(res))
+
+3) # Define a function with a generator 
+# which can iterate the numbers, 
+# which are divisible by 3 and 4, between a given range 0 and n 
+def div(): 
+    for i in range(n+1): 
+        if i % 3 == 0 and i % 4 == 0: 
+            yield i 
+n = int(input("Enter any integer: ")) 
+for x in div(): 
+    print(x)
+4) 
+def gensquares(): 
+    for i in range(a, b+1): 
+        yield i*i 
+a = int(input("Enter starting point: ")) 
+b = int(input("Enter ending point: ")) 
+for x in gensquares(): 
+    print(x)
+5)
+# Implement a generator that returns all numbers from (n) down to 0. 
+def rev(): 
+    for i in range(n, -1, -1): 
+        yield i 
+ 
+n = int(input("Enter any number: ")) 
+for x in rev(): 
+    print(x)
+
+math.md
+import math 
+# DegTo Rad 
+a = int(input()) 
+print(a * math.pi/180) 
+ 
+# area of trap 
+h = int(input()) 
+a = int(input()) 
+b = int(input()) 
+print((a+b)/2*h) 
+ 
+# area of parall 
+l = int(input()) 
+h = int(input()) 
+print(l*h) 
+ 
+# PolygonArea 
+n = int(input()) 
+length = int(input()) 
+p = n * length 
+deg = 180/n 
+tang = int(math.tan(deg)) 
+apophem = length/2/tang 
+area = apophem * p/2 
+print(area)
