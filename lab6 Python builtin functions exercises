@@ -1,0 +1,63 @@
+> Бекжан:
+Python builtin functions exercises
+
+> Бекжан:
+1)
+import math
+
+def multiply_list(numbers):
+    return math.prod(numbers)
+
+# Example usage:
+numbers = [1, 2, 3, 4, 5]
+result = multiply_list(numbers)
+print("Result:", result)
+
+> Бекжан:
+2) def count_case(string):
+    upper_count = sum(1 for char in string if char.isupper())
+    lower_count = sum(1 for char in string if char.islower())
+    return upper_count, lower_count
+
+# Example usage:
+input_string = "Hello World"
+upper, lower = count_case(input_string)
+print("Number of uppercase letters:", upper)
+print("Number of lowercase letters:", lower)
+
+> Бекжан:
+3) def is_palindrome(s):
+    return s == s[::-1]
+
+# Example usage:
+input_string = "radar"
+if is_palindrome(input_string):
+    print("The string is a palindrome.")
+else:
+    print("The string is not a palindrome.")
+
+> Бекжан:
+4) import time
+import math
+
+def calculate_square_root(number, milliseconds):
+    time.sleep(milliseconds / 1000)  # Convert milliseconds to seconds
+    square_root = math.sqrt(number)
+    return square_root
+
+# Example usage:
+number = 25100
+milliseconds = 2123
+result = calculate_square_root(number, milliseconds)
+print(f"Square root of {number} after {milliseconds} milliseconds is {result}.")
+
+> Бекжан:
+5) def all_true(tuple):
+    return all(tuple)
+
+# Example usage:
+tuple1 = (True, True, True)
+tuple2 = (True, False, True)
+print("All elements of tuple1 are true:", all_true(tuple1))
+print("All elements of tuple2 are true:", all_true(tuple2))
+
